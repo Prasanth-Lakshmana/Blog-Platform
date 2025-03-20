@@ -12,7 +12,7 @@ export default function RegisterPage() {
   async function register(ev) {
     try {
       ev.preventDefault();
-      const response = await fetch("https://blog-backend-qex9.onrender.com/register", {
+      const response = await fetch("https://blog-backend-qex9.onrender.com/api/register", {
         method: "POST",
         body: JSON.stringify({ username, password }),
         headers: { "Content-Type": "application/json" },
