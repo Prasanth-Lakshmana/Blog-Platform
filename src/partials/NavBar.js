@@ -54,7 +54,7 @@ const Navbar = () => {
 
   const { setUserInfo, userInfo } = useContext(UserContext);
   useEffect(() => {
-    fetch("http://localhost:4000/profile", {
+    fetch("https://blog-backend-qex9.onrender.com/profile", {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -64,7 +64,7 @@ const Navbar = () => {
   }, []);
 
   function logout() {
-    fetch("http://localhost:4000/logout", {
+    fetch("https://blog-backend-qex9.onrender.com/logout", {
       credentials: "include",
       method: "POST",
     });
@@ -89,6 +89,12 @@ const Navbar = () => {
           <ul>
             <li>
               <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/blogs">Blogs</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
             </li>
             {username && (
               <>
